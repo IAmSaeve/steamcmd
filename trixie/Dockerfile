@@ -14,12 +14,12 @@ RUN set -x \
     # Install, update & upgrade packages
     && apt-get update \
     && apt-get install -y --no-install-recommends --no-install-suggests \
-        lib32stdc++6 \
-        lib32gcc-s1 \
-        ca-certificates \
-        nano \
-        curl \
-        locales \
+        lib32stdc++6=14.2.0-19 \
+        lib32gcc-s1=14.2.0-19 \
+        ca-certificates=20250419 \
+        nano=8.4-1 \
+        curl=8.14.1-2+deb13u2 \
+        locales=2.41-12 \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
     # Create unprivileged user
